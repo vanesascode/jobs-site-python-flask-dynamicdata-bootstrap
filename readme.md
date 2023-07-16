@@ -1,12 +1,14 @@
 # Jobs site using Python Flask stack with Dynamic Data for database management (BACKEND + FRONTEND)
 
-In the video you can see how it looks and what it does. Notice this app is still in development stage running on a local domain. It is a learning project and you can find all my notes during the process, which helped me understand everything better, below the video. 👇👇👇
+In the link below you can see how it looks and what it does. Notice this app is still in development stage running on a local domain. It is a learning project and you can find all my notes during the process, which helped me understand everything better. 👇👇👇
 
----
+## https://dev-jobs-by-vanesascode.onrender.com/
 
-The combination of `Python, Flask, and MySQL` is commonly used in web development to create a full-stack application. Flask is a lightweight web framework in Python, while MySQL is a popular relational database management system.
+![Captura](https://github.com/vanesascode/jobs-site-python-flask-mysql-bootstrap/assets/131259155/d4ff4d32-e7f2-4ca2-815f-7bcf6bab9f1b)
 
-Together, they allow developers to build dynamic and scalable web applications, handling both the front-end and back-end aspects of the application. This combination is often referred to as a Python Flask stack with MySQL for database management.
+The combination of `Python, Flask, and Data` is commonly used in web development to create a full-stack application. Flask is a lightweight web framework in Python.
+
+Together, they allow developers to build dynamic and scalable web applications, handling both the front-end and back-end aspects of the application. 
 
 # To run the app:
 
@@ -39,8 +41,6 @@ This is our main route handler, since we only have a page in this app:
 ```
 @app.route("/")
 def home():
-    cursor.execute("SELECT * FROM jobs")
-    jobpositions = cursor.fetchall()
     return render_template("home.html", jobpositions=jobpositions, company_name="Dev")
 ```
 
