@@ -1,4 +1,4 @@
-# Jobs site using Python Flask stack with MySQL for database management (BACKEND + FRONTEND)
+# Jobs site using Python Flask stack with Dynamic Data for database management (BACKEND + FRONTEND)
 
 In the video you can see how it looks and what it does. Notice this app is still in development stage running on a local domain. It is a learning project and you can find all my notes during the process, which helped me understand everything better, below the video. 👇👇👇
 
@@ -75,16 +75,9 @@ At this point, then, the code mentioned before in the route handler should make 
 
 'jobs' is the table I am using from my 'jobsposition' database, and it is the table that will be rendered in the template 'home.html' using the template 'jobitems' as a pattern for each item in the 'jobs' table.
 
-## MySQL
+## Deployment
 
-To create a database you must download MySQL Workbench. You can then work on your database in VSCode if you prefer, by using the extensions `SQLTools` and `SQLTools MySQL/MariaDB/TiDB`, both by Matheus Teixeira. However, you'll probably need to create your first datebase in Workbench to be able to see it in VSCode.
 
-Remember that your username is 'root' and that the password is that one you introduced when installing MySQL Workbench.
-
-In VSCode, you'll need that info to connect to the database. Also, you'll need it when connecting Flask to the database.
-
-To start your session in a command prompt, you navigate to the MySQL directory:
-`cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"`, and then run: `mysql -u root -p`. After that, you'll be asked your password.
 
 # 💥 FRONTEND 💥
 
