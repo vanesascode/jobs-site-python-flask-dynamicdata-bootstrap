@@ -1,2 +1,0 @@
---@block
-SELECT * FROM jobs;
