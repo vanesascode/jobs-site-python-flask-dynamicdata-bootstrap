@@ -51,7 +51,7 @@ The function returns the rendered template "home.html" using the render_template
 
 ## Deployment
 
-In order to deploy it into an Internet URL, I created a file called requirements.txt in which I indicate the apps that need to be installed for production stage, and added it to the project folder. Then, in [render.com](https://dashboard.render.com/) I uploaded the Github repository as a Web Service (free option). 
+In order to deploy it into an Internet URL, I created a file called requirements.txt in which I indicate the apps that need to be installed for production stage, and added it to the project folder. Then, in [render.com](https://dashboard.render.com/) I uploaded the Github repository as a Web Service (free option). You set the Runtime as `Python 3`, the Build Command as `pip install -r requirements.txt` and the start command as `gunicorn app:app`.
 
 
 # 💥 FRONTEND 💥
@@ -70,7 +70,7 @@ As mentioned before, in this particular project we just have a page (home, "/").
 
 We can also get every item from the fetched 'jobs' MySQL table like this:
 
-`{% for job in jobpositions %} {% include "jobitems.html" %} {% endfor %}`
+`{% for job in jobs %} {% include "jobitems.html" %} {% endfor %}`
 
 The construction of every item in the jobs table is going to be indicated in the template 'jobitems'
 
