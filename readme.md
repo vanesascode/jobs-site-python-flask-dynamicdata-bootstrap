@@ -41,42 +41,17 @@ This is our main route handler, since we only have a page in this app:
 ```
 @app.route("/")
 def home():
-    return render_template("home.html", jobpositions=jobpositions, company_name="Dev")
+    return render_template("home.html", jobs=JOBS, company_name="Dev")
 ```
 
 When a user accesses the root URL ("/"), the home() function is executed.
 
-The function first executes a SELECT query on the "jobs" table in the database using the cursor.execute() method. The result of the query is stored in the 'jobpositions' variable using the cursor.fetchall() method.
+The function returns the rendered template "home.html" using the render_template() function from Flask. It passes the JOBS variable (the name of the database, in fact) as a parameter to the template, which can be accessed within the template. Additionally, it passes the value "Dev" as the company_name parameter to the template.
 
-Then, the function returns the rendered template "home.html" using the render_template() function from Flask. It passes the jobpositions variable (the name of the database, in fact) as a parameter to the template, which can be accessed within the template. Additionally, it passes the value "Dev" as the company_name parameter to the template.
-
-Let's have a look first to the database connection and then to the templates:
-
-## Connecting to the database
-
-To connect to our database we have created in MySQL, first we install [MySQL.connector](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html).
-
-- [x] run: pip install mysql-connector-python
-- [ ] import it in app.py: `import mysql.connector`
-- [ ] establish the connection to the database indicating the host, the user name, the password, and the database name.
-- [ ] create a cursor object. It allows you to execute SQL queries and fetch results from the database:
-
-```
-cursor = db.cursor()
-```
-
-In this case we use 'db' because it is the variable I assigned the return value of the connect() function from the mysql.connector module, when establishing the connection (see code in app.py).
-
-At this point, then, the code mentioned before in the route handler should make more sense:
-
-```cursor.execute("SELECT * FROM jobs")
-    jobpositions = cursor.fetchall()
-```
-
-'jobs' is the table I am using from my 'jobsposition' database, and it is the table that will be rendered in the template 'home.html' using the template 'jobitems' as a pattern for each item in the 'jobs' table.
 
 ## Deployment
 
+In order to deploy it into an Internet URL, I created a file called requirements.txt in which I indicate the apps that need to be installed for production stage, and added it to the project folder. Then, in [render.com](https://dashboard.render.com/) I uploaded the Github repository as a Web Service (free option). 
 
 
 # 💥 FRONTEND 💥
